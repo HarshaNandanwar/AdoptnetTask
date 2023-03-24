@@ -1,0 +1,48 @@
+<section class="container">
+    <div class="top-nav">
+        Create Post
+    </div>
+    <div class="main-box">
+        <form [formGroup]="createPost">
+            <div class="row ">
+                <div class="col-md-6">
+                    <label>Title Name</label>
+                    <input class="form-control" placeholder="Specify Title name" formControlName="title">
+                    <br>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <label>Body Detail</label>
+                    <input class="form-control" placeholder="Specify Body detail" formControlName="body">
+                    <br>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <label>UserId</label>
+                    <select class="form-control" name="select" (change)="onUserIdChange($event)"
+                        formControlName="userId">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn cancelBtn btn-outline-secondary" routerLink="/">
+                    Cancel</button>&nbsp;&nbsp;
+                <button type="submit" class="btn createBtn btn-outline-secondary" (click)="addPost()" style="background-color: #4967a4; color: azure;"> Create
+                    Post</button>
+            </div>
+        </form>
+    </div>
+</section>

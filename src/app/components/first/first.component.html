@@ -1,0 +1,45 @@
+<section class="container">
+    <div class="top-nav">
+        Welcome To Post List
+    </div>
+    <div class="main-box">
+        <div class=" btn-box ">
+            <button type="button" class="btn btn-sm post-btn" style="background-color: #4967a4; color: azure;"
+                routerLink="/create">CREATE A NEW POST
+            </button>
+        </div>
+        <br>
+        <div class="table-box">
+            <mat-tab-group>
+                <mat-tab label="Post List">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Body</th>
+                                <th scope="col">UserId</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of postData ; let i = index">
+                                <th scope="row">{{ i + 1}}</th>
+                                <td>{{data.title}}</td>
+                                <td>{{data.body}}</td>
+                                <td>{{data.userId}}</td>
+                                <td>
+                                    <button style="border: none;" (click)="editPost(data.id)"><i style="color: #4967a4;" class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </td>
+                                <td>
+                                    <button style="border: none;"  (click)="deletePost(data.id)"><i style="color: #4967a4;" class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</section>
